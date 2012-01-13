@@ -1,0 +1,30 @@
+<% if @results %>
+  <div class="row"><%= @results.size %> 件を表示</div>
+  <table>
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>size</th>
+        <th>download</th>
+        <th>lastModifiedBy</th>
+        <th>lastModificationDate</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @results.each_with_index do |r, idx| %>
+    <tr>
+      <td><%= r.property_by_id("cmis:name") %></td>
+      <% if r.property_by_id("cmis:baseTypeId") == "cmis:document" %>
+        <td><%= r.property_by_id("cmis:contentStreamLength")/1024 %>KB</td>
+        <td><a href="javascript:alert('not implemented!')" class="t1" title="download"><img src="<%= $icons[r.property_by_id('cmis:contentStreamMimeType')] %>"></img></a></td>
+      <% else %>
+        <td></td>
+        <td><a href="javascript:alert('not implemented!')" class="t1" title="download"><img src="<%= $icons['folder'] %>"></img></a></td>
+      <% end %>
+      <td><%= r.property_by_id("cmis:lastModifiedBy").to_s %></td>
+      <td><%= r.property_by_id("cmis:lastModificationDate").to_s %></td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>

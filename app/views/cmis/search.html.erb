@@ -1,0 +1,27 @@
+
+<div class="container">
+  <%= form_tag('/cmis/search', :method => :get) do %>
+  <div class="row">
+    <div class="clearfix span16">
+      <label for="s_name">Name:&nbsp;&nbsp;</label>
+      <input class="xlarge" name="s_name" id="s_name" size="10" type="text"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="clearfix span16">
+      <label for="s_ext">Ext:&nbsp;&nbsp;</label>
+      <input class="xlarge" name="s_ext" id="s_ext" size="5" type="text"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="clearfix span16">
+      <label for="s_fts">Fts:&nbsp;&nbsp;</label>
+      <input class="xlarge" name="s_fts" id="s_fts" size="10" type="text"/>
+    </div>
+  </div>
+  <%= submit_tag 'Search', :class => 'btn primary' %>
+  <% end %>
+  <div id="s_results">
+    <%= render :partial => 'hits' %>
+  </div>
+</div>
