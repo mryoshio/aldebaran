@@ -8,6 +8,7 @@ license:: GNU LGPL v3
 This projects makes simple light interface for CMIS server (e.g. Alfresco) with Ruby on Rails.
 
 The aldebaran currently uses following components.
+* ActiveCMIS [http://xaop.com/labs/activecmis/]
 * Bootstrap [http://twitter.github.com/bootstrap/]
 * Images used in alfresco community edition3.4d [http://www.alfresco.com/]
 
