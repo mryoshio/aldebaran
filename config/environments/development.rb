@@ -59,7 +59,7 @@ CmisSample::Application.configure do
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document" => "/alf_images/doc.gif",
     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" => "/alf_images/xls.gif",
     "application/vnd.openxmlformats-officedocument.presentationml.presentation" => "/alf_images/ppt.gif",
-    "folder" => "alf_images/generic-folder-32.png"
+    "folder" => "/alf_images/generic-folder-32.png"
   }
 
 end

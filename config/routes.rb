@@ -56,8 +56,9 @@ CmisSample::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 
-#  root :to => 'cmis#index'
+  root :to => 'cmis#index'
   match 'cmis/' => 'cmis#index'
   match 'cmis/search' => 'cmis#search'
+  match 'cmis/explore' => 'cmis#explore'
 
 end

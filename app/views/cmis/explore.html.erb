@@ -1,0 +1,34 @@
+
+<div class="container">
+  <div class="row"><%= link_to 'Repository Root', {:action=>'explore'} %></div>
+<% if @children %>
+  <div class="row"><%= @children.size %> 件を表示</div>
+  <table>
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>size</th>
+        <th>download</th>
+        <th>lastModifiedBy</th>
+        <th>lastModificationDate</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @children.each_with_index do |c, idx| %>
+    <tr>
+      <td><%= c.attributes["cmis:name"] %></td>
+      <% if c.attributes["cmis:baseTypeId"] == "cmis:document" %>
+        <td><%= c.attributes["cmis:contentStreamLength"]/1024 %>KB</td>
+        <td><a href="javascript:alert('not implemented!')" class="t1" title="download"><img src="<%= $icons[c.attributes['cmis:contentStreamMimeType']] %>"></img></a></td>
+      <% else %>
+        <td></td>
+        <td><%= link_to(image_tag($icons['folder']), {:action=>'explore', :parent=>c.attributes["cmis:objectId"]}) %></td>
+      <% end %>
+      <td><%= c.attributes["cmis:lastModifiedBy"].to_s %></td>
+      <td><%= c.attributes["cmis:lastModificationDate"].to_s %></td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>
+</div>

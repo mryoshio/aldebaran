@@ -30,4 +30,13 @@ class CmisController < ApplicationController
     @results = $repo.query(q)
     logger.debug("hits: #{@results.size}")
   end
+  def explore
+    logger.debug(params)
+    if params[:parent]
+      @children = $repo.object_by_id(params[:parent]).items
+    else
+      @children = $repo.root_folder.items
+     end
+    logger.debug("children.size #{@children.size}")
+  end
 end

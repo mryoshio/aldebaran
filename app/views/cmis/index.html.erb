@@ -1,7 +1,9 @@
 
 <div class="container">
   <%= form_tag('/cmis/search', :method => :get) do %>
-    <%= submit_tag 'Search', :class => 'btn primary' %> ... search alfresco repository
+    <%= submit_tag 'Search', :class => 'btn primary' %> ... Search alfresco repository
   <% end %>
-  <button class="btn default">Explorer</button> ... explorer alfresco repository
+  <%= form_tag('/cmis/explore', :method => :get) do %>
+    <%= submit_tag 'Explore', :class => 'btn primary' %> ... Explore alfresco repository
+  <% end %>
 </div>
