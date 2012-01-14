@@ -3,10 +3,18 @@ author:: mryoshio (yoshiokaas _at_ gmail.com)
 created:: 2012/01/14
 license:: GNU LGPL v3
 
+
 = About
 This projects makes simple light interface for CMIS server (e.g. Alfresco) with Ruby on Rails.
 
 The aldebaran currently uses following components.
 * Bootstrap [http://twitter.github.com/bootstrap/]
 * Images used in alfresco community edition3.4d [http://www.alfresco.com/]
+
+
+= Easy introduction
+Only 2 steps you need!
+1. Set up your alfresco (aldebarn tested with commnity edition 3.4d)
+2. Edit config/environments/development.rb
+* Set $cmis_config["repo_id"] value with your repository id. You can see it at http://localhost:8080/alfresco/service/cmis.
 
